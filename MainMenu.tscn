@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/CapitalisTypOasis.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 155
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 34
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 37
+font_data = ExtResource( 2 )
+
+[node name="MainMenu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0.121569, 0.105882, 0.105882, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_right = 403.0
+margin_bottom = 127.0
+custom_fonts/font = SubResource( 1 )
+text = "XAOS"
+
+[node name="NewGame" type="Button" parent="ColorRect"]
+margin_top = 324.0
+margin_right = 484.0
+margin_bottom = 396.0
+custom_fonts/font = SubResource( 2 )
+text = "GO TO THE PROTOTYPE"
+
+[node name="Quit" type="Button" parent="ColorRect"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = -307.0
+margin_right = 377.0
+margin_bottom = -243.0
+custom_fonts/font = SubResource( 3 )
+text = "QUIT GAME"
+[connection signal="pressed" from="ColorRect/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="ColorRect/Quit" to="." method="_on_Quit_pressed"]
